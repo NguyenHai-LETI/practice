@@ -8,7 +8,9 @@ class MenuBarView : View(){
     override val root =  menubar {
         menu("File") {
             item("Save", "Shortcut+S").action {
-                menuBarController.save()
+                action {
+                   menuBarController.save(this@MenuBarView)
+                }
             }
             separator()
             item("Quit", "Shortcut+Q").action {
